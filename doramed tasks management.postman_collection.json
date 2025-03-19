@@ -1,0 +1,363 @@
+{
+	"info": {
+		"_postman_id": "9798e5ae-a445-4770-9d14-ed116cb4ccf6",
+		"name": "doramed tasks management",
+		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Scripts\" tab**\n\nAdding tests to your requests can help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/fa30ea0a-373d-4545-a668-e7b283cca343/aW1hZ2UucG5n\" alt=\"\" height=\"1530\" width=\"2162\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n    \n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43205997",
+		"_collection_link": "https://shayanahrari-7856985.postman.co/workspace/e5f9abce-6372-49e6-8f0b-b176a0b570e1/collection/43205997-9798e5ae-a445-4770-9d14-ed116cb4ccf6?action=share&source=collection_link&creator=43205997"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://192.168.1.18:8000/accounts/auth/login/",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"1",
+								"18"
+							],
+							"port": "8000",
+							"path": [
+								"accounts",
+								"auth",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ0ODk1OTM2LCJpYXQiOjE3NDIzMDM5MzYsImp0aSI6IjUzYzJkYTg5ZTU2NTRmMTZhODQ1M2I4YzQ5NjExYWUyIiwidXNlcl9pZCI6MX0.20Ynx1wepliuP--3eugdKSxrRCfNyA4nDHEQCcYnSyE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "refresh_token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0NDg5NTkzNiwiaWF0IjoxNzQyMzAzOTM2LCJqdGkiOiI0MjZiOGVlOTdjOTg0YzhiOWUxYTE2MmNiNjQ2YjJlZCIsInVzZXJfaWQiOjF9.BoQQbpi5rxq4fxHzEwchDFBTJoSgSrdPrcm2tJ6OdKM",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://192.168.1.18:8000/accounts/logout/?refresh_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0NDg5NTkzNiwiaWF0IjoxNzQyMzAzOTM2LCJqdGkiOiI0MjZiOGVlOTdjOTg0YzhiOWUxYTE2MmNiNjQ2YjJlZCIsInVzZXJfaWQiOjF9.BoQQbpi5rxq4fxHzEwchDFBTJoSgSrdPrcm2tJ6OdKM",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"1",
+								"18"
+							],
+							"port": "8000",
+							"path": [
+								"accounts",
+								"logout",
+								""
+							],
+							"query": [
+								{
+									"key": "refresh_token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0NDg5NTkzNiwiaWF0IjoxNzQyMzAzOTM2LCJqdGkiOiI0MjZiOGVlOTdjOTg0YzhiOWUxYTE2MmNiNjQ2YjJlZCIsInVzZXJfaWQiOjF9.BoQQbpi5rxq4fxHzEwchDFBTJoSgSrdPrcm2tJ6OdKM"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "testuser1",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "test1@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "password2",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://192.168.1.18:8000/accounts/register/",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"1",
+								"18"
+							],
+							"port": "8000",
+							"path": [
+								"accounts",
+								"register",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tasks",
+			"item": [
+				{
+					"name": "list tasks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ0ODk1OTM2LCJpYXQiOjE3NDIzMDM5MzYsImp0aSI6IjUzYzJkYTg5ZTU2NTRmMTZhODQ1M2I4YzQ5NjExYWUyIiwidXNlcl9pZCI6MX0.20Ynx1wepliuP--3eugdKSxrRCfNyA4nDHEQCcYnSyE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.1.18:8000/tasks/",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"1",
+								"18"
+							],
+							"port": "8000",
+							"path": [
+								"tasks",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create tasks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ0ODk1OTM2LCJpYXQiOjE3NDIzMDM5MzYsImp0aSI6IjUzYzJkYTg5ZTU2NTRmMTZhODQ1M2I4YzQ5NjExYWUyIiwidXNlcl9pZCI6MX0.20Ynx1wepliuP--3eugdKSxrRCfNyA4nDHEQCcYnSyE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "task 3",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "this is task 2",
+									"type": "text"
+								},
+								{
+									"key": "due_date",
+									"value": "2025-03-19T13:32:26Z",
+									"type": "text"
+								},
+								{
+									"key": "user",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://192.168.1.18:8000/tasks/create/",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"1",
+								"18"
+							],
+							"port": "8000",
+							"path": [
+								"tasks",
+								"create",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete tasks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ0ODk1OTM2LCJpYXQiOjE3NDIzMDM5MzYsImp0aSI6IjUzYzJkYTg5ZTU2NTRmMTZhODQ1M2I4YzQ5NjExYWUyIiwidXNlcl9pZCI6MX0.20Ynx1wepliuP--3eugdKSxrRCfNyA4nDHEQCcYnSyE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.1.18:8000/tasks/4/delete/",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"1",
+								"18"
+							],
+							"port": "8000",
+							"path": [
+								"tasks",
+								"4",
+								"delete",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "partial update tasks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ0ODk1OTM2LCJpYXQiOjE3NDIzMDM5MzYsImp0aSI6IjUzYzJkYTg5ZTU2NTRmMTZhODQ1M2I4YzQ5NjExYWUyIiwidXNlcl9pZCI6MX0.20Ynx1wepliuP--3eugdKSxrRCfNyA4nDHEQCcYnSyE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "important task",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://192.168.1.18:8000/tasks/4/update/",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"1",
+								"18"
+							],
+							"port": "8000",
+							"path": [
+								"tasks",
+								"4",
+								"update",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://postman-rest-api-learner.glitch.me/"
+		}
+	]
+}

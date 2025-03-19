@@ -1,0 +1,54 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="E722" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N806" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="accounts.models.Profile.objects" />
+          <option value="accounts.models.Relation.objects" />
+          <option value="accounts.models.Req.objects" />
+          <option value="accounts.models.Relation.following" />
+          <option value="rest_framework_simplejwt.tokens.Token.access_token" />
+          <option value="posts.models.Mark.objects" />
+          <option value="messenger.models.Message.*" />
+          <option value="accounts.models.UserStatus.objects" />
+          <option value="api.models.Payment.objects" />
+          <option value="crypto.models.ApiWallet.objects" />
+          <option value="crypto.models.CryptoTransaction.objects" />
+          <option value="api.models.PayLog.objects" />
+          <option value="django.db.models.fields.related.OneToOneField.phone_number" />
+          <option value="posts.models.Post.objects" />
+          <option value="posts.models.ExampleCategory.objects" />
+          <option value="posts.models.Subject.objects" />
+          <option value="posts.models.ExamplePost.objects" />
+          <option value="posts.models.Comment.objects" />
+          <option value="accounts.models.OtpCode.objects" />
+          <option value="bank.models.ReqTransaction.objects" />
+          <option value="bank.models.GateTransaction.objects" />
+          <option value="bank.models.Payment.objects" />
+          <option value="tronapi.main.Tron.trx" />
+          <option value="bank.models.PayLog.objects" />
+          <option value="bank.models.Payment.DoesNotExist" />
+          <option value="accounts.models.Notification.objects" />
+          <option value="accounts.models.FixedMessage.DoesNotExist" />
+          <option value="accounts.models.FixedMessage.objects" />
+          <option value="accounts.models.News.objects" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
